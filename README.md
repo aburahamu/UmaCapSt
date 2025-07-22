@@ -2,10 +2,15 @@
 このアプリはSteam版ウマ娘のスクリーンショットを撮影するアプリです。
 This app saves screenshots of Uma Musume (Steam version).
 
+## 前提条件
+* Pythonが使える環境が必要です
+
 ## 使い方
-1. Steam版ウマ娘を起動した状態でUmaCapSt.exeをダブルクリックする
-2. 撮影用のアイコン（全体、左側、右側）のいずれかをクリックする
-3. 保存用フォルダに画像が保存されます。
+1. build.batをダブルクリックする
+2. フォルダ「dist」にUmaCapSt.exeが出力されるので任意の場所に置く（そのままでも良い）
+3. Steam版ウマ娘を起動した状態でUmaCapSt.exeをダブルクリックする
+4. 撮影用のアイコン（全体、左側、右側）のいずれかをクリックする
+5. 保存用フォルダに画像が保存されます。
 
 **機能**
 - Set Folder：保存先フォルダを指定できます
@@ -13,7 +18,7 @@ This app saves screenshots of Uma Musume (Steam version).
 - TOP ON：このアプリを最前面に表示し続ける機能が有効な状態です。
 - TOP OFF：最前面機能がオフです。
 
-## カスタムの仕方（Pythonが使える環境が必要です）
+## カスタムの仕方
 1. config.jsonを弄る
 2. build.batをダブルクリックする
 3. フォルダ「dist」にUmaCapSt.exeが出力されるのでコピーして今のexeに上書きする
