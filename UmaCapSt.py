@@ -123,6 +123,13 @@ class UmaCapStApp:
         self.thumbnail_label = tk.Label(root)
         self.thumbnail_label.pack(side=tk.BOTTOM, pady=10)
 
+        # 背景全体を覆うラベル（またはフレーム）を作成
+        self.drag_area = tk.Label(root)
+        self.drag_area.place(x=0, y=0, relwidth=1, relheight=1)
+        self.drag_area.bind("<Button-1>", self.start_move)
+        self.drag_area.bind("<B1-Motion>", self.do_move)
+        self.drag_area.lower()
+        
     def toggle_topmost(self):
         self.topmost = not self.topmost
         self.root.attributes('-topmost', self.topmost)
@@ -139,6 +146,17 @@ class UmaCapStApp:
         if os.path.isdir(self.save_dir):
             path = Path(self.save_dir).resolve()
             subprocess.Popen(["explorer", str(path)])
+
+    def start_move(self, event):
+            self._drag_x = event.x
+            self._drag_y = event.y
+
+    def do_move(self, event):
+        dx = event.x - self._drag_x
+        dy = event.y - self._drag_y
+        x = self.root.winfo_x() + dx
+        y = self.root.winfo_y() + dy
+        self.root.geometry(f"+{x}+{y}")
 
     def capture(self, mode):
         hwnd = find_umamusume_window(self.game_title)
