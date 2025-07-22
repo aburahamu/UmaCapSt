@@ -1,6 +1,7 @@
 # UmaCapSt
 このアプリはSteam版ウマ娘のスクリーンショットを撮影するアプリです。
 This app saves screenshots of Uma Musume (Steam version).
+![アプリ画面サンプル](https://github.com/user-attachments/assets/d85e821f-73fc-4973-a275-f3ebf731f594)
 
 ## 前提条件
 * Pythonが使える環境が必要です
